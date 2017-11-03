@@ -31,3 +31,5 @@ PRODUCT_COPY_FILES += \
 # Timezone information
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
+$(call inherit-product, device/sony/common-treble/common.mk)

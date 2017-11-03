@@ -71,17 +71,8 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 ### PARTITIONS
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-
-# Build ext4 tools - system/vold
-TARGET_USERIMAGES_USE_EXT4 := true
-
-# ext4 vendor image
-TARGET_COPY_OUT_VENDOR := vendor
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # vendor/qcom/opensource/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
@@ -97,3 +88,5 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.yoshino
 ifeq ($(WITH_TWRP),true)
 -include $(LOCAL_PATH)/twrp.mk
 endif
+
+include device/sony/common-treble/BoardConfigTreble.mk
