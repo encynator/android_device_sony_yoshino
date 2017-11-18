@@ -32,4 +32,5 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/sony/common-treble/common.mk)
 
 $(call inherit-product, device/sony/yoshino/platform-config.mk)
+$(call inherit-product, device/sony/yoshino/platform-hardware.mk)
 $(call inherit-product, device/sony/yoshino/system_prop.mk)

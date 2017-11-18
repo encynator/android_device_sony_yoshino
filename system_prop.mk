@@ -18,3 +18,7 @@
 PRODUCT_PROPERTY_OVERRIDES := \
     sys.usb.controller=a800000.dwc3 \
     ro.usb.pid_suffix=1f1
+
+# OpenGLES version
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196610
