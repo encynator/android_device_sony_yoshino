@@ -28,14 +28,21 @@ on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
 
-    mount_all ./fstab.yoshino
-    swapon_all ./fstab.yoshino
+    mount_all fstab.yoshino --early
+    swapon_all fstab.yoshino
+
+    wait /dev/block/bootdevice/sda53 # /dev/block/bootdevice/by-name/cache
+    mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev barrier=1
+    rm /cache/lilac.log
 
     restorecon_recursive /persist
 
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     write /dev/ipa 1
+
+on late-fs
+    mount_all fstab.yoshino --late
 
 on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
@@ -103,6 +110,11 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-1
+
+service logcat_debug /system/bin/logcat -b all -f /cache/lilac.log -v threadtime
+    class main
+    user root
+    group system
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/vendor/bin/macaddrsetup /data/misc/wifi/wlan_mac.bin
