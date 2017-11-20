@@ -71,3 +71,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ### BLUETOOTH
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bluetooth.soc=cherokee
+
+### CAMERA
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.gyro.disable=1 \
+    persist.camera.feature.cac=0 \
+    persist.camera.ois.disable=0 \
+    persist.camera.eis.enable=0 \
+    persist.camera.zsl.mode=1 \
+    persist.camera.exif.rotation=off \
+    persist.camera.lib2d.rotation=on
+
+# Disable Dual Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.dual.camera.mpo=0 \
+    persist.camera.dc.frame.sync=0 \
+    persist.camera.dcrf.enable=0
+
+# Camera Debug
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.hal.debug=0 \
+    persist.camera.kpi.debug=0 \
+    persist.camera.global.debug=0

@@ -17,6 +17,10 @@
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter lilac poplar maple, $(TARGET_DEVICE)),)
+
+SRC_MEDIA_HAL_DIR := hardware/qcom/media-caf/msm8996
+QCOM_MEDIA_ROOT   := hardware/qcom/media-caf/msm8996
+
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)

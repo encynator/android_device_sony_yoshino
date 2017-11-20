@@ -8,3 +8,7 @@ PRODUCT_PACKAGES += \
 ### AUDIO
 PRODUCT_PACKAGES += \
     audio.primary.msm8998
+
+# CAMERA
+PRODUCT_PACKAGES += \
+    camera.msm8998
