@@ -112,16 +112,16 @@ service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service pd_mapper /odm/bin/pd-mapper
+service pd_mapper /vendor/bin/pd-mapper
      class core
 
-service start_hci_filter /odm/bin/wcnss_filter
+service start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth system wakelock
     disabled
 
-service cnss-daemon /odm/bin/cnss-daemon -n -l
+service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
