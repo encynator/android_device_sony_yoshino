@@ -14,3 +14,9 @@ PRODUCT_COPY_FILES += \
 ### AUDIO
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/config/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+
+### MEDIA
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(PLATFORM_PATH)/config/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(PLATFORM_PATH)/config/media/media_profiles_V1_0.xml:vendor/etc/media_profiles_V1_0.xml
