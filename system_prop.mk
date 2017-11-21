@@ -67,3 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.pug=false \
     ro.qti.sensors.iod=false \
     ro.qfusion_use_report_period=false
+
+### BLUETOOTH
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=cherokee
