@@ -25,3 +25,8 @@ PRODUCT_COPY_FILES += \
 # RQBalance-PowerHAL configuration
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/config/power/rqbalance_config.xml:system/etc/rqbalance_config.xml
+
+### WIFI
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(PLATFORM_PATH)/config/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
