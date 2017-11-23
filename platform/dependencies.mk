@@ -1,3 +1,9 @@
+### LIBS
+PRODUCT_PACKAGES += \
+    libaudio_log_utils \
+    libgpustats \
+    libta
+
 ### CAMERA
 PRODUCT_PACKAGES += \
     libmmcamera_interface \
