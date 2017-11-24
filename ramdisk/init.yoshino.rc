@@ -41,6 +41,12 @@ on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
 
+on post-fs-data
+    # tftp_server directories
+    mkdir /data/tombstones 0775 system system
+    mkdir /data/tombstones/vendor 0775 system system
+    chmod 0775 /data/tombstones/vendor
+
 on boot
     # WLAN MAC
     chown wifi wifi /sys/module/wlan/parameters/fwpath
