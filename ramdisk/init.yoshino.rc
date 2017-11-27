@@ -47,6 +47,9 @@ on post-fs-data
     mkdir /data/tombstones/vendor 0775 system system
     chmod 0775 /data/tombstones/vendor
 
+    # qcril
+    mkdir /data/vendor/radio 0770 system radio
+
 on boot
     # WLAN MAC
     chown wifi wifi /sys/module/wlan/parameters/fwpath
